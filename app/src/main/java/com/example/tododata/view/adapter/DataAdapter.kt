@@ -12,21 +12,22 @@ import com.example.tododata.room.DataEntity
 
 class DataAdapter (
     val context: Context,
-    val noteClickDeleteInterface: NoteClickDeleteInterface,
-    val noteClickInterface: NoteClickInterface
+    val noteClickDeleteInterface: TodoClickDeleteInterface,
+    val noteClickInterface: DataClickInterface
 ) :
     RecyclerView.Adapter<DataAdapter.ViewHolder>() {
 
-    // on below line we are creating a
-    // variable for our all notes list.
+
     private val allData = ArrayList<DataEntity>()
 
     // on below line we are creating a view holder class.
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var title = itemView.findViewById<TextView>(R.id.title)
+        var desc = itemView.findViewById<TextView>(R.id.desc)
         var date = itemView.findViewById<TextView>(R.id.date)
         val deleteIV = itemView.findViewById<ImageView>(R.id.IVDelete)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,6 +42,9 @@ class DataAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.title.setText(allData.get(position).title)
+
+        holder.desc.setText(allData.get(position).desc)
+
         holder.date.setText("Date :" + allData.get(position).date)
 
         holder.deleteIV.setOnClickListener {
@@ -77,12 +81,12 @@ class DataAdapter (
     }
 }
 
-interface NoteClickDeleteInterface {
+interface TodoClickDeleteInterface {
     // creating a method for click
     // action on delete image view.
     fun onDeleteIconClick(note: DataEntity)
 }
-interface NoteClickInterface {
+interface DataClickInterface {
     // creating a method for click action
     // on recycler view item for updating it.
     fun onNoteClick(note: DataEntity)

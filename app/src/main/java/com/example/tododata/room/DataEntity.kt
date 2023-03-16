@@ -7,15 +7,23 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "notesTable" )
 
 data class DataEntity(
-    @PrimaryKey( autoGenerate = true)
-    var id:Int,
+
     @ColumnInfo(name ="title")
     var title: String,
+
+    @ColumnInfo(name = "desc")
+    var desc : String,
+
     @ColumnInfo(name = "date")
-    var date: String
+    var date: String)
+
+   {
+    @PrimaryKey( autoGenerate = true)
+    var id:Int=0
+    }
 
 
 
 
 
-)
+

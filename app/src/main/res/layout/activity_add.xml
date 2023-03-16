@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/back4"
-    tools:context=".view.AddActivity">
+    tools:context=".view.activites.AddActivity">
 
     <TextView
         android:id="@+id/tvAddTask"
@@ -36,6 +36,20 @@
         app:layout_constraintTop_toBottomOf="@id/tvAddTask" />
 
     <EditText
+        android:id="@+id/etdesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Descirpition"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/etTitle" />
+
+    <EditText
         android:id="@+id/etDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +61,7 @@
         android:focusable="false"
         android:onClick="date"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/etTitle" />
+        app:layout_constraintTop_toBottomOf="@id/etdesc" />
 
     <Button
         android:id="@+id/btnSave"
