@@ -4,8 +4,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/back4"
+    android:background="@drawable/backnew"
     tools:context=".view.activites.AddActivity">
+
+
 
     <TextView
         android:id="@+id/tvAddTask"
@@ -13,56 +15,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD TASK"
-        app:boxStrokeColor="@color/white"
+        app:boxStrokeColor="@color/black"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--edit text for title-->
 
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Title"
-        android:textColorHint="@color/white"
-        app:boxStrokeColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/tvAddTask" />
 
+    <!--edit text for desc-->
     <EditText
         android:id="@+id/etdesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Descirpition"
-        android:textColorHint="@color/white"
-        app:boxStrokeColor="@color/white"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        app:boxStrokeColor="@color/black"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/etTitle" />
 
+    <!--edit text for date-->
     <EditText
         android:id="@+id/etDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="DD/MM/YYYY"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="30dp"
         android:focusable="false"
+        android:textStyle="bold"
         android:onClick="date"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/etdesc" />
 
+    <!--button for saving and updating a todoData-->
     <Button
         android:id="@+id/btnSave"
         android:layout_width="match_parent"

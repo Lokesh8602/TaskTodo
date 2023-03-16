@@ -10,7 +10,7 @@
         android:id="@+id/todotoolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@drawable/back4"
+        android:background="@drawable/backnew"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/RecyclerView">
@@ -25,10 +25,12 @@
             android:text="TODO APPLICATION"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="22sp">
 
         </TextView>
+
+        <!--Image for adding a new TodoData-->
 
         <ImageView
             android:id="@+id/btnAdd"
@@ -40,12 +42,14 @@
         />
     </androidx.appcompat.widget.Toolbar>
 
+    <!--recycler view for displaying all todoData-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
-        android:background="@drawable/back4"
+        android:background="@drawable/backnew"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/todotoolbar"
         app:layout_constraintEnd_toEndOf="parent"

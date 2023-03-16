@@ -6,19 +6,27 @@ import androidx.room.Update
 import com.example.tododata.room.DataEntity
 import com.example.tododata.room.TodoDao
 
-class DataRepository (private val notesDao: TodoDao) {
+class DataRepository (private val DataDao: TodoDao) {
 
+    // on below line we are creating a variable for our list
+    // and we are getting all the notes from our DAO class.
 
-    val allNotes: LiveData<List<DataEntity>> = notesDao.getAllNotes()
+    val allData: LiveData<List<DataEntity>> = DataDao.getTodoData()
 
+    // on below line we are creating an insert method
+    // for adding the note to our database.
     suspend fun insert(note: DataEntity) {
-        notesDao.insert(note)
+        DataDao.insert(note)
+    }
+    // on below line we are creating a delete method
+    // for deleting our note from database.
+    suspend fun delete(note: DataEntity){
+        DataDao.delete(note)
     }
 
-    suspend fun delete(note: DataEntity){
-        notesDao.delete(note)
-    }
+    // on below line we are creating a update method for
+    // updating our note from database.
     suspend fun update(note: DataEntity){
-        notesDao.update(note)
+        DataDao.update(note)
     }
 }

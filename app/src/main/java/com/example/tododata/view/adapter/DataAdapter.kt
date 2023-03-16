@@ -16,7 +16,8 @@ class DataAdapter (
     val noteClickInterface: DataClickInterface
 ) :
     RecyclerView.Adapter<DataAdapter.ViewHolder>() {
-
+    // on below line we are creating a
+    // variable for our all notes list.
 
     private val allData = ArrayList<DataEntity>()
 
@@ -41,12 +42,13 @@ class DataAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
+        // on below line we are setting data to item of recycler view.
+
         holder.title.setText(allData.get(position).title)
-
         holder.desc.setText(allData.get(position).desc)
-
         holder.date.setText("Date :" + allData.get(position).date)
 
+        // on below line we are adding click listener to our delete image view icon
         holder.deleteIV.setOnClickListener {
 
             noteClickDeleteInterface.onDeleteIconClick(allData.get(position))
